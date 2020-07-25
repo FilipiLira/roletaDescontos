@@ -1,0 +1,13 @@
+#container{
+    margin: auto auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.roleta{
+    width: 600px;
+    height: 600px;
+    background-color: aqua;
+    border-radius: 50%;
+}

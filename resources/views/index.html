@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="page">
+        <div id="container">
+            <div id="roleta" v-on:click="girar" v-bind:style="styleRoleta"> 
+               <div style="width: 400px; height: 20px; background-color: black;"></div>
+            </div>
+        </div>
+        <!-- <todo-item></todo-item>
+        <div v-bind:style="container">texto</div> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // Vue.component('roleta', {
+        //     template: `<div>
+                          
+        //                </div>`
+        // })
+
+        // Vue.component('texto', {
+        //     template: '<p></p>'
+        // })
+
+        // new Vue({
+        //     el: '#roleta',
+        //     data: {
+        //         styleContainer: {
+        //             backgroundColor: 'red',
+        //             display: 'flex',
+        //             flexDirection: 'row',
+        //             margin: 'auto auto'
+        //         }
+        //     }
+        // })
+var giros = 0;
+        var roleta = new Vue({
+            el: '#roleta',
+            data: {
+                styleRoleta: {
+                    width: '600px',
+                    height: '600px',
+                    backgroundColor: 'aqua',
+                    borderRadius: '50%',
+                    transition: 'all 2s ease-in-out',
+                    transform: ''
+                },
+            },
+            
+                    giros: 0,
+            
+            methods: {
+                girar: function ( ) {
+                   giros = giros + Math.random() * 3800
+                   this.styleRoleta.transform = `rotate(${giros}deg)`
+                   console.log(giros)
+
+                //    setTimeout(( )=>{
+                //     this.styleRoleta.transform = 'rotate(3000deg)'
+                //    }, 7000)
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
